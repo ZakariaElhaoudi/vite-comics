@@ -82,8 +82,6 @@ export default {
 @use '../styles/partials/mixins.scss' as *;
 
 header {
-    width: 80%;
-    height: 200px;
     margin: 20px auto;
     text-align: center;
     @include center();
