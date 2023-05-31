@@ -9,6 +9,18 @@ export default {
 }
 </script>
 
-<template></template>
+<template>
+    <footer>
+        <div>
+            <nav>
 
-<style scoped></style>
+            </nav>
+        </div>
+
+
+    </footer>
+</template>
+
+<style lang="scss" scoped>
+@use '../styles/partials/variables.scss' as *;
+</style>

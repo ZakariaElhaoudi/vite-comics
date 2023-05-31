@@ -68,7 +68,7 @@ export default {
 
         <nav>
             <ul>
-                <li v-for="link in links" :class="status ? 'active' : ''">
+                <li v-for="link in links" :class="link.status ? 'active' : ''">
                     <a :href="link.link">{{ link.text }}</a>
 
                 </li>
@@ -79,37 +79,33 @@ export default {
 
 <style lang="scss" scoped>
 @use '../styles/partials/variables.scss' as *;
+@use '../styles/partials/mixins.scss' as *;
 
 header {
     width: 80%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+    height: 200px;
+    margin: 20px auto;
+    text-align: center;
+    @include center();
 
     ul {
-        display: flex;
-        align-items: center;
+        @include center();
         margin: 2.5rem 1rem 4rem;
 
-        li {
-            list-style: none;
 
-            a {
-                display: inline-block;
-                text-decoration: none;
-                padding: 1rem;
-                font-weight: 600;
-                transition: background 0.3s;
+        li a {
+            text-decoration: none;
+            padding: 1rem;
+            font-weight: 600;
+            transition: background 0.3s;
 
-                &.active,
-                &:hover {
-                    color: $primary;
-                    padding-bottom: 1em;
-                    border-bottom: solid 2px $primary ;
-                }
+            &.active,
+            &:hover {
+                color: $primary;
+                padding-bottom: 1em;
+                border-bottom: solid 2px $primary ;
             }
         }
     }
-
 }
 </style>
