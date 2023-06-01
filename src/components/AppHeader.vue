@@ -68,8 +68,8 @@ export default {
 
         <nav>
             <ul>
-                <li v-for="link in links" :class="link.status ? 'active' : ''">
-                    <a :href="link.link">{{ link.text }}</a>
+                <li v-for="link in links">
+                    <a :class="link.status ? 'active' : ''" :href="link.link">{{ link.text }}</a>
 
                 </li>
             </ul>
