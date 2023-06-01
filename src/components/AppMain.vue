@@ -1,10 +1,10 @@
 <script>
-import ListCards from './ListCards.vue'
+import ListCard from '../components/ListCard.vue'
 
 export default {
     name: 'AppMain',
     components: {
-        ListCards
+        ListCard,
     },
     data() {
         return {
@@ -89,13 +89,68 @@ export default {
 
 <template>
     <main>
-        <div class="container">
-            <ListCards v-for="(cards, index) in cardShop" :key="index" />
+        <div class="jumbotron">
+            <div class="current-series">
+                <a href="#">CURRENT SERIES</a>
+            </div>
         </div>
+        <div class="container">
+            <ListCard v-for="(card, index) in cardShop" :key="index" :card="card" />
+        </div>
+        <div class="button">
+            <button>LOAD MORE</button>
+        </div>
+
     </main>
 </template>
 
 <style lang="scss" scoped>
 @use '../styles/partials/variables.scss' as *;
 @use '../styles/partials/mixins.scss' as *;
+
+main {
+    background-color: #1c1c1c;
+
+
+    .jumbotron {
+        background-image: url("../assets/img/jumbotron.jpg");
+        width: 100%;
+        height: 400px;
+        position: relative;
+
+        .current-series {
+            position: absolute;
+            bottom: 0px;
+            left: 50px;
+
+            a {
+                font-weight: 600;
+                color: white;
+                padding: 20px 50px;
+                background-color: $primary;
+                border: 2px solid $primary;
+            }
+        }
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 50px;
+    }
+
+    .button {
+        text-align: center;
+        padding-bottom: 20px;
+
+    }
+
+    button {
+        background-color: $primary;
+        border: 2px solid $primary;
+        padding: 15px 50px;
+        color: white;
+        cursor: pointer;
+    }
+}
 </style>
