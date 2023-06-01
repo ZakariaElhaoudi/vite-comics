@@ -121,7 +121,7 @@ main {
         .current-series {
             position: absolute;
             bottom: 0px;
-            left: 50px;
+            left: 200px;
 
             a {
                 font-weight: 600;
